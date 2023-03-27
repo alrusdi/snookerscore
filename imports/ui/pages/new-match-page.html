@@ -3,32 +3,32 @@
     <div class="ui grid container">
       {{#div class="sixteen wide mobile twelve wide tablet ten wide computer eight wide large screen centered column"}}
         <div class="ui raised segment">
-          <h2>Enter match data</h2>
+          <h2>Настройки новой партии</h2>
           <div class="ui divider"></div>
           <form id="create-form" class="ui form">
               <div class="two fields">
                 <div class="field">
-                  <label>Player One</label>
-                  <input id="player1" type="text" name="players[]">
+                  <label>Игрок 1</label>
+                  <input id="player1" type="text" name="players[]" value="Сергей">
                 </div>
                 <div class="field">
-                  <label>Player Two</label>
-                  <input id="player2" type="text" name="players[]">
+                  <label>Игрок 2</label>
+                  <input id="player2" type="text" name="players[]" value="Саша">
                 </div>
               </div>
               <div class="two fields">
                 <div class="field">
-                  <label>Handicap for One</label>
+                  <label>Фора для игрока 1</label>
                   <input id="handicap1" type="text" name="handicaps[]" data-value-type="number">
                 </div>
                 <div class="field">
-                  <label>Handicap for Two</label>
+                  <label>Фора для игрока 2</label>
                   <input id="handicap2" type="text" name="handicaps[]" data-value-type="number">
                 </div>
               </div>
               <div class="two fields">
                 <div class="field">
-                  <label>Date &amp; Time</label>
+                  <label>Дата и время</label>
                   <div class="ui calendar" id="datetime">
                      <input type="text" name="datetime">
                   </div>
@@ -36,12 +36,12 @@
                 <div class="field">
                     <div class="two fields">
                       <div class="field">
-                        <label>Frames</label>
-                        <input type="text" name="frames" value="3"
+                        <label>Фреймов</label>
+                        <input type="text" name="frames" value="1"
                             data-value-type="number">
                       </div>
                       <div class="field">
-                        <label>Reds</label>
+                        <label>Красных шаров</label>
                         <input type="text" name="reds" value="15"
                             data-value-type="number">
                       </div>
@@ -50,27 +50,27 @@
               </div>
             <div class="two fields">
               <div class="field">
-                <label>Country</label>
+                <label>Страна</label>
                 {{> countries }}
               </div>
               <div class="field">
-                <label>City</label>
+                <label>Город</label>
                 <input type="text" name="city">
               </div>
             </div>
             <div class="two fields">
               <div class="field">
-                <label>Venue</label>
+                <label>Место проведения</label>
                 <input type="text" name="venue">
               </div>
               <div class="field">
-                <label>Event</label>
+                <label>Название турнира</label>
                 <input type="text" name="event">
               </div>
             </div>
             <div class="ui center aligned basic segment">
               <button id="create-button" class="ui big green fluid button"
-                type="submit"><i class="save icon"></i>Create Match</button>
+                type="submit"><i class="save icon"></i>Создать</button>
             </div>
             <div class="ui error message"></div>
           </form>

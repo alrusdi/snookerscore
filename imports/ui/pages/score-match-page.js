@@ -31,7 +31,7 @@ Template.Score_match_page.helpers({
     let s = this.status;
     if (!s) return false;
     if (s.player_to_break === null) { // match did not start yet
-      this.message = "Please click the name of the player to break in the first frame (or press 1 or 2 on the keyboard)";
+      this.message = "Нажмите имя игрока, который будет разбивать в первом фрейме (можно нажать также 1 или 2 на клавиатуре)";
       return true;
     } else if (s.frames[0] >= (this.frames + 1) / 2 ||
                s.frames[1] >= (this.frames + 1) / 2) { // match finished
@@ -39,7 +39,7 @@ Template.Score_match_page.helpers({
       this.message = "Match - " + winner;
       return true;
     } else if (s.player_at_the_table === null) { // re-spotted black
-      this.message = "Please click the name of the player to play next (or press 1 or 2 on the keyboard)";
+      this.message = "Нажмите имя игрока, который будет бить (можно нажать также 1 или 2 на клавиатуре)";
       return true;
     } else {
       return false;
@@ -212,16 +212,16 @@ Template.Score_match_page.helpers({
 
           let phrase = '';
           if (s.red > 1) {
-            phrase = s.red + ' Reds';
+            phrase = s.red + ' красных';
           } else if (s.red === 1) {
-            phrase = s.red + ' Red';
+            phrase = s.red + ' красный';
           } else {
-            phrase = 'No Reds';
+            phrase = 'Красных нет';
           }
 
           return phrase;
       }
-      return 'Break Off';
+      return 'Разбил';
   },
 
   end_break_disabled() {

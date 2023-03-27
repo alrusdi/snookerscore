@@ -2,8 +2,68 @@
 
 <style type="text/css">
   body {
-    background-color: Black;
+    background-color: #021c07;
     padding-top: 20px;
+  }
+
+  #red {
+    background-image: url('/images/balls/red.png') !important;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-color: #0000;
+  }
+
+  #yellow {
+    background-image: url('/images/balls/yellow.png') !important;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-color: #0000;
+  }
+
+  #green {
+    background-image: url('/images/balls/green.png') !important;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-color: #0000;
+  }
+
+  #brown {
+    background-image: url('/images/balls/brown.png') !important;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-color: #0000;
+  }
+
+  #blue {
+    background-image: url('/images/balls/blue.png') !important;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-color: #0000;
+  }
+
+  #pink {
+    background-image: url('/images/balls/pink.png') !important;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-color: #0000;
+  }
+
+  #black {
+    background-image: url('/images/balls/black.png') !important;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-color: #0000;
+  }
+
+  #red:disabled, #yellow:disabled, #green:disabled, #brown:disabled, #blue:disabled, #pink:disabled, #black:disabled {
+    opacity: 0.15 !important;
   }
 </style>
 
@@ -46,7 +106,7 @@
                             <small>({{ frames }})</small>
                             {{ status.frames.[1] }}
                         </div>
-                        <div class="label">Frames</div>
+                        <div class="label">Фреймы</div>
                     </div>
                 </div>
                 <div class="two wide center aligned column">
@@ -106,7 +166,7 @@
                             {{ status.break_points }}
                         </div>
                         <div class="label">
-                            Break
+                            Серия
                         </div>
                     </div>
                 </div>
@@ -155,7 +215,7 @@
                             <small>({{ frames }})</small>
                             {{ status.frames.[1] }}
                         </div>
-                        <div class="label">Frames</div>
+                        <div class="label">Фреймы</div>
                     </div>
                 </div>
                 <div class="five wide center aligned squeezed column">
@@ -198,7 +258,7 @@
                             {{ status.break_points }}
                         </div>
                         <div class="label">
-                            Break
+                            Серия
                         </div>
                     </div>
                 </div>
@@ -221,7 +281,7 @@
                             {{ status.break_points }}
                         </div>
                         <div class="label">
-                            Break
+                            Серия
                         </div>
                     </div>
                 </div>
@@ -239,37 +299,30 @@
                         <div class="ui seven column equal width grid">
                             <div class="column">
                                 <button id="red" class="ui circular massive red icon button" {{red_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="yellow" class="ui circular massive yellow icon button" {{yellow_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="green" class="ui circular massive green icon button" {{green_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="brown" class="ui circular massive brown icon button" {{brown_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="blue" class="ui circular massive blue icon button" {{blue_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="pink" class="ui circular massive pink icon button" {{pink_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="black" class="ui circular massive black icon button" {{black_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                         </div> <!-- seven column grid -->
@@ -285,20 +338,20 @@
                             <div class="column">
                                 <div id="end-break" class="ui large fluid left labeled {{end_break_disabled}} button">
                                     <div class="ui label"><div class="key">E</div></div>
-                                    <div class="ui large fluid button">End Break</div>
+                                    <div class="ui large fluid button">Завершить серию</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="re-rack" class="ui large fluid left labeled {{re_rack_disabled}} button">
                                     <div class="ui label"><div class="key">R</div></div>
-                                    <div class="ui large fluid button">Re-Rack</div>
+                                    <div class="ui large fluid button">Начать заново</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="red-lost" class="ui large fluid left labeled {{red_lost_disabled}} button">
                                     <div class="ui label"><div class="key">L</div></div>
                                     <div class="ui large fluid animated fade button">
-                                        <div class="visible content">Red Lost</div>
+                                        <div class="visible content">Упал красный</div>
                                         <div class="hidden content">{{status.red}} remain</div>
                                     </div>
                                 </div>
@@ -306,73 +359,73 @@
                             <div class="column">
                                 <div id="foul4" class="ui large fluid left labeled {{foul4_disabled}} button">
                                     <div class="ui label"><div class="key">F4</div></div>
-                                    <div class="ui large fluid button">Foul 4</div>
+                                    <div class="ui large fluid button">Фол 4</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="foul5" class="ui large fluid left labeled {{foul5_disabled}} button">
                                     <div class="ui label"><div class="key">F5</div></div>
-                                    <div class="ui large fluid button">Foul 5</div>
+                                    <div class="ui large fluid button">Фол 5</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="foul6" class="ui large fluid left labeled {{foul6_disabled}} button">
                                     <div class="ui label"><div class="key">F6</div></div>
-                                    <div class="ui large fluid button">Foul 6</div>
+                                    <div class="ui large fluid button">Фол 6</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="foul7" class="ui large fluid left labeled {{foul7_disabled}} button">
                                     <div class="ui label"><div class="key">F7</div></div>
-                                    <div class="ui large fluid button">Foul 7</div>
+                                    <div class="ui large fluid button">Фол 7</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="miss" class="ui large fluid left labeled {{miss_disabled}} button">
                                     <div class="ui label"><div class="key">M</div></div>
-                                    <div class="ui large fluid button">Miss</div>
+                                    <div class="ui large fluid button">Промах</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="free-ball" class="ui large fluid left labeled {{free_ball_disabled}} button">
                                     <div class="ui label"><div class="key">F</div></div>
-                                    <div class="ui large fluid button">Free Ball</div>
+                                    <div class="ui large fluid button">Свободный шар</div>
                                 </div>
                             </div>
                             <div id="put-back" class="column">
                                 <div class="ui large fluid left labeled {{put_back_disabled}} button">
                                     <div class="ui label"><div class="key">B</div></div>
-                                    <div class="ui large fluid button">Put Back</div>
+                                    <div class="ui large fluid button">Вернуть позицию</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="play-again" class="ui large fluid left labeled {{play_again_disabled}} button">
                                     <div class="ui label"><div class="key">A</div></div>
-                                    <div class="ui large fluid button">Play Again</div>
+                                    <div class="ui large fluid button">Играть снова</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="frame-won" class="ui large fluid left labeled {{frame_won_disabled}} button">
                                     <div class="ui olive label disabled"><div class="key">W</div></div>
-                                    <div class="ui large olive fluid button">Frame Won</div>
+                                    <div class="ui large olive fluid button">Фрейм выигран</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="conceded" class="ui large fluid left labeled {{conceded_disabled}} button">
                                     <div class="ui orange label disabled"><div class="key">C</div></div>
-                                    <div class="ui large orange fluid button">Conceded</div>
+                                    <div class="ui large orange fluid button">Сдаться</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="undo" class="ui large fluid left labeled {{undo_disabled}} button">
                                     <div class="ui label"><div class="key">Z</div></div>
-                                    <div class="ui large fluid button">Undo</div>
+                                    <div class="ui large fluid button">Отмена</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="redo" class="ui large fluid left labeled {{redo_disabled}} button">
                                     <div class="ui label"><div class="key">Y</div></div>
-                                    <div class="ui large fluid button">Redo</div>
+                                    <div class="ui large fluid button">Повтор</div>
                                 </div>
                             </div>
                         </div>
@@ -388,37 +441,30 @@
                         <div class="ui seven column equal width grid">
                             <div class="column">
                                 <button id="red" class="ui circular massive red icon button" {{red_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="yellow" class="ui circular massive yellow icon button" {{yellow_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="green" class="ui circular massive green icon button" {{green_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="brown" class="ui circular massive brown icon button" {{brown_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="blue" class="ui circular massive blue icon button" {{blue_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="pink" class="ui circular massive pink icon button" {{pink_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="black" class="ui circular massive black icon button" {{black_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                         </div>
@@ -432,78 +478,78 @@
                             </div>
                             <div class="column">
                                 <div id="end-break" class="ui large fluid {{end_break_disabled}} button">
-                                    End Break
+                                    Завершить серию
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="re-rack" class="ui large fluid {{re_rack_disabled}} button">
-                                    Re-Rack
+                                    Начать заново
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="red-lost" class="ui large fluid animated fade {{red_lost_disabled}} button">
-                                    <div class="visible content">Red Lost</div>
+                                    <div class="visible content">Упал красный</div>
                                     <div class="hidden content">{{status.red}} remain</div>
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="foul4" class="ui large fluid {{foul4_disabled}} button">
-                                    Foul 4
+                                    Фол 4
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="foul5" class="ui large fluid {{foul5_disabled}} button">
-                                    Foul 5
+                                    Фол 5
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="foul6" class="ui large fluid {{foul6_disabled}} button">
-                                    Foul 6
+                                    Фол 6
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="foul7" class="ui large fluid {{foul7_disabled}} button">
-                                    Foul 7
+                                    Фол 7
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="miss" class="ui large fluid {{miss_disabled}} button">
-                                    Miss
+                                    Промах
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="free-ball" class="ui large fluid {{free_ball_disabled}} button">
-                                    Free Ball
+                                    Свободный шар
                                 </div>
                             </div>
                             <div id="put-back" class="column">
                                 <div class="ui large fluid {{put_back_disabled}} button">
-                                    Put Back
+                                    Вернуть позицию
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="play-again" class="ui large fluid {{play_again_disabled}} button">
-                                    Play Again
+                                    Играть снова
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="frame-won" class="ui large olive fluid {{frame_won_disabled}} button">
-                                    Frame Won
+                                    Фрейм выигран
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="conceded" class="ui large orange fluid {{conceded_disabled}} button">
-                                    Conceded
+                                    Сдаться
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="undo" class="ui large fluid {{undo_disabled}} button">
-                                    Undo
+                                    Отмена
                                 </div>
                             </div>
                             <div class="column">
                                 <div id="redo" class="ui large fluid {{redo_disabled}} button">
-                                    Redo
+                                    Повторить
                                 </div>
                             </div>
                         </div>
@@ -520,22 +566,18 @@
                           style="margin: -28px">
                             <div class="column">
                                 <button id="red" class="ui circular massive red icon button" {{red_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="yellow" class="ui circular massive yellow icon button" {{yellow_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="green" class="ui circular massive green icon button" {{green_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="brown" class="ui circular massive brown icon button" {{brown_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                         </div>
@@ -545,17 +587,14 @@
                           style="margin: -25px; margin-bottom: -20px; margin-top: -40px">
                             <div class="column">
                                 <button id="blue" class="ui circular massive blue icon button" {{blue_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="pink" class="ui circular massive pink icon button" {{pink_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                             <div class="column">
                                 <button id="black" class="ui circular massive black icon button" {{black_disabled}}>
-                                    <i class="bullseye icon"></i>
                                 </button>
                             </div>
                         </div>
@@ -569,77 +608,77 @@
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="end-break" class="ui fluid {{end_break_disabled}} button">
-                                    End Break
+                                    Завершить серию
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="red-lost" class="ui fluid {{red_lost_disabled}} button">
-                                    Red Lost
+                                    Упал красный
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="re-rack" class="ui fluid {{re_rack_disabled}} button">
-                                    Re-Rack
+                                    Начать заново
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="foul4" class="ui fluid {{foul4_disabled}} button">
-                                    Foul 4
+                                    Фол 4
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="foul5" class="ui fluid {{foul5_disabled}} button">
-                                    Foul 5
+                                    Фол 5
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="foul6" class="ui fluid {{foul6_disabled}} button">
-                                    Foul 6
+                                    Фол 6
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="foul7" class="ui fluid {{foul7_disabled}} button">
-                                    Foul 7
+                                    Фол 7
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="miss" class="ui fluid {{miss_disabled}} button">
-                                    Miss
+                                    Промах
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="free-ball" class="ui fluid {{free_ball_disabled}} button">
-                                    Free Ball
+                                    Свободный шар
                                 </div>
                             </div>
                             <div id="put-back" class="column" style="margin: -12px">
                                 <div class="ui fluid {{put_back_disabled}} button">
-                                    Put Back
+                                    Вернуть позицию
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="play-again" class="ui fluid {{play_again_disabled}} button">
-                                    Play Again
+                                    Играть снова
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="undo" class="ui fluid {{undo_disabled}} button">
-                                    Undo
+                                    Отмена
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="redo" class="ui fluid {{redo_disabled}} button">
-                                    Redo
+                                    Повтор
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="frame-won" class="ui olive fluid {{frame_won_disabled}} button">
-                                    Frame Won
+                                    Фрейм выигран
                                 </div>
                             </div>
                             <div class="column" style="margin: -12px">
                                 <div id="conceded" class="ui orange fluid {{conceded_disabled}} button">
-                                    Conceded
+                                    Сдаться
                                 </div>
                             </div>
                         </div>

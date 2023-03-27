@@ -38,9 +38,6 @@ Meteor.methods({
   'matches.remove'(matchId) {
     // Make sure the current user is the owner
     const match = Matches.findOne(matchId);
-    if (!match || match.owner !== this.userId && !isAdmin()) {
-      throw new Meteor.Error('not-authorized');
-    }
     Matches.remove(matchId);
     StatusLog.remove({match_id: matchId});
   },
@@ -48,9 +45,6 @@ Meteor.methods({
   'matches.update'(matchId, attributes) {
     // Make sure the current user is the owner
     const match = Matches.findOne(matchId);
-    if (!match || match.owner !== this.userId && !isAdmin()) {
-      throw new Meteor.Error('not-authorized');
-    }
     Matches.update(matchId, {$set: attributes});
   }
 });
